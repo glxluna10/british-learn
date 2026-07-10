@@ -1,5 +1,5 @@
 /* ============================================================
-   English Masterbook by Gaida Gaa — British English (BrE)
+   English Masterbook by Gaida Tsabita Ahmad — British English (BrE)
    Theme: refined editorial "online book"
    ============================================================ */
 
@@ -91,6 +91,8 @@ body {
   align-items: center;
   gap: 10px;
   min-width: 0;
+  text-decoration: none;
+  color: inherit;
 }
 .brand-mark {
   display: grid;
@@ -149,6 +151,7 @@ body {
   font: inherit;
   font-size: 14px;
   font-weight: 600;
+  text-decoration: none;
   transition:
     background 0.2s,
     border-color 0.2s,
@@ -162,6 +165,17 @@ body {
 }
 .menu-btn {
   display: none;
+}
+
+/* Home button in topbar */
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+}
+.home-btn svg {
+  flex: none;
 }
 
 .theme-btn .ico-moon {
@@ -226,6 +240,13 @@ html[data-theme='dark'] .theme-btn .ico-moon {
   background: var(--primary-soft);
   border-left-color: var(--primary);
   font-weight: 600;
+}
+.toc-home {
+  margin-bottom: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--line);
+  font-weight: 600;
+  color: var(--primary);
 }
 
 .sidebar-progress {
@@ -641,6 +662,29 @@ code {
   font-size: 0.92em;
 }
 
+/* Level badges */
+.level-badge {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 99px;
+}
+.level-badge.easy {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+.level-badge.medium {
+  background: #f2ead2;
+  color: var(--gold);
+}
+.level-badge.hard {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
 /* Exercises */
 .ex-list {
   padding-left: 22px;
@@ -711,6 +755,11 @@ code {
   color: #fbfaf6;
   border-radius: 10px;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   transition:
     transform 0.1s,
     opacity 0.2s;
@@ -729,6 +778,12 @@ code {
 .btn-outline {
   background: transparent;
   color: var(--primary);
+}
+.btn[disabled],
+.btn.is-locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* Homework */
@@ -771,6 +826,63 @@ code {
   font-size: 1.2em;
 }
 
+/* ---------- Lesson navigation (prev / home / next) ---------- */
+.lesson-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 34px 0 8px;
+}
+.lesson-nav .nav-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  transition:
+    border-color 0.2s,
+    transform 0.1s;
+}
+.lesson-nav .nav-card:hover {
+  border-color: var(--primary);
+}
+.lesson-nav .nav-card:active {
+  transform: scale(0.99);
+}
+.lesson-nav .nav-next {
+  text-align: right;
+  align-items: flex-end;
+}
+.nav-dir {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--ink-soft);
+}
+.nav-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  color: var(--primary);
+}
+.nav-card.is-locked {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.nav-card.is-locked .nav-name {
+  color: var(--ink-soft);
+}
+.lesson-nav-home {
+  grid-column: 1 / -1;
+  text-align: center;
+  align-items: center;
+}
+
 /* Back to top */
 .to-top {
   position: fixed;
@@ -792,6 +904,190 @@ code {
 }
 .to-top:active {
   transform: scale(0.92);
+}
+
+/* ============================================================
+   HOME / BERANDA (Daftar Isi)
+   ============================================================ */
+.home {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px 90px;
+}
+
+.home-hero {
+  text-align: center;
+  padding: 64px 30px 52px;
+  background: radial-gradient(130% 90% at 50% 0%, var(--primary-soft), transparent 68%), var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-top: 26px;
+  box-shadow: var(--shadow);
+}
+.home-hero .op-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: var(--primary);
+  color: #fbfaf6;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+}
+.home-vol {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+}
+.home-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 8vw, 3.4rem);
+  line-height: 1.05;
+  margin: 0 0 14px;
+  color: var(--primary);
+  text-wrap: balance;
+}
+.home-sub {
+  max-width: 520px;
+  margin: 0 auto 22px;
+  color: var(--ink-soft);
+}
+.home-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  padding: 7px 16px;
+  border-radius: 99px;
+  font-size: 14px;
+}
+.home-flag .flag {
+  font-size: 18px;
+}
+
+.home-section-title {
+  font-family: 'Fraunces', serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--ink-soft);
+  margin: 44px 6px 4px;
+}
+.home-section-line {
+  height: 1px;
+  background: var(--line);
+  margin: 0 6px 20px;
+}
+
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.lesson-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px 22px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  transition:
+    border-color 0.2s,
+    transform 0.12s,
+    box-shadow 0.2s;
+}
+.lesson-card:not(.is-locked):hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+.lesson-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.lesson-no {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.lesson-status {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 99px;
+}
+.lesson-status.ready {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+.lesson-status.soon {
+  background: color-mix(in srgb, var(--gold) 18%, transparent);
+  color: var(--gold);
+}
+
+.lesson-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--primary);
+  text-wrap: balance;
+}
+.lesson-desc {
+  font-size: 0.92em;
+  color: var(--ink-soft);
+  margin: 0;
+  flex: 1;
+}
+.lesson-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--primary);
+  margin-top: 6px;
+}
+
+.lesson-card.is-locked {
+  cursor: not-allowed;
+  background: color-mix(in srgb, var(--paper) 70%, var(--bg));
+}
+.lesson-card.is-locked .lesson-name {
+  color: var(--ink-soft);
+}
+.lesson-card.is-locked .lesson-cta {
+  color: var(--ink-soft);
+}
+.lock-icon {
+  font-size: 0.85em;
+}
+
+.home-footer {
+  text-align: center;
+  margin-top: 54px;
+  color: var(--ink-soft);
 }
 
 /* ---------- Opening / Intro ---------- */
@@ -940,16 +1236,87 @@ body.opening-active {
   font-weight: 700;
 }
 
-.op-start {
+.op-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   margin-top: 26px;
+}
+.op-start {
   width: 100%;
   font-size: 1.02em;
   padding: 14px;
+}
+.op-back {
+  font-size: 0.9em;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.op-back:hover {
+  color: var(--primary);
 }
 .op-hint {
   font-size: 12px;
   color: var(--ink-soft);
   margin: 12px 0 0;
+}
+
+/* ---------- Coming soon page ---------- */
+.soon-wrap {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 60px 20px 90px;
+  text-align: center;
+}
+.soon-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--gold);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 52px 38px 44px;
+}
+.soon-icon {
+  font-size: 40px;
+  margin-bottom: 14px;
+}
+.soon-lesson {
+  font-family: 'Fraunces', serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0 0 6px;
+}
+.soon-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 7vw, 2.8rem);
+  line-height: 1.05;
+  margin: 0 0 8px;
+  color: var(--primary);
+}
+.soon-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 99px;
+  background: color-mix(in srgb, var(--gold) 18%, transparent);
+  color: var(--gold);
+  margin: 8px 0 18px;
+}
+.soon-desc {
+  color: var(--ink-soft);
+  margin-bottom: 28px;
+}
+.soon-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 /* ---------- Responsive ---------- */
@@ -993,14 +1360,25 @@ body.opening-active {
     padding: 34px 22px 30px;
   }
   .fn-grid,
-  .vocab-grid {
+  .vocab-grid,
+  .lesson-grid {
     grid-template-columns: 1fr;
   }
   .brand-text span {
     display: none;
   }
+  .home-btn span {
+    display: none;
+  }
   tbody th {
     width: 42%;
+  }
+  .lesson-nav {
+    grid-template-columns: 1fr;
+  }
+  .lesson-nav .nav-next {
+    text-align: left;
+    align-items: flex-start;
   }
 }
 

@@ -4,64 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#14342b" />
-    <meta name="description" content="English Masterbook by Gaida Tsabita Ahmad — buku online belajar bahasa Inggris British (BrE). Lesson 01: Present Simple." />
-    <title>Present Simple · English Masterbook by Gaida Tsabita Ahmad</title>
+    <meta name="description" content="English Masterbook by Gaida Tsabita Ahmad — buku online belajar bahasa Inggris British (BrE). Daftar isi semua lesson." />
+    <title>Beranda · English Masterbook by Gaida Tsabita Ahmad</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <!-- Opening / Book intro (tampil setiap kali halaman dibuka) -->
-    <div class="opening" id="opening" role="dialog" aria-modal="true" aria-label="Pembuka lesson">
-      <div class="opening-inner">
-        <div class="opening-book">
-          <p class="op-brand"><span class="op-mark" aria-hidden="true">EM</span> English Masterbook</p>
-          <p class="op-vol">Volume 1 · <span class="flag" aria-hidden="true">🇬🇧</span> British English</p>
-
-          <div class="op-divider" aria-hidden="true">✦ ■ ✦</div>
-
-          <p class="op-lesson">Lesson 01</p>
-          <h1 class="op-title">Present Simple</h1>
-          <p class="op-sub"><em>facts · habits · routines · schedules</em></p>
-
-          <div class="op-welcome">
-            <p class="op-hi">Selamat datang</p>
-            <p>Halo! Aku <strong>Gaida Tsabita Ahmad</strong>. Selamat datang di buku belajar bahasa Inggris British-ku. Sebelum mulai, ini yang akan kamu kuasai di lesson ini:</p>
-            <ul class="op-points">
-              <li>4 fungsi Present Simple: <em>fact, habit, routine, schedule</em></li>
-              <li>Rumus positif, negatif &amp; tanya (termasuk aturan -s / -es)</li>
-              <li>Signal words dan posisinya yang tepat dalam kalimat</li>
-              <li>20 kosakata daily routine + pelafalan British</li>
-              <li>Latihan bertingkat Easy → Medium → Hard, plus homework</li>
-            </ul>
-          </div>
-
-          <button class="btn op-start" id="startBtn" type="button">Mulai Belajar →</button>
-          <p class="op-hint">Perkiraan 15–20 menit · siapkan buku catatanmu dulu</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Reading progress bar -->
-    <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
-
+  <body data-lesson="home">
     <!-- Top bar -->
     <header class="topbar">
-      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Buka daftar isi" aria-expanded="false">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <line x1="3" y1="6" x2="21" y2="6" />
-          <line x1="3" y1="12" x2="21" y2="12" />
-          <line x1="3" y1="18" x2="21" y2="18" />
-        </svg>
-      </button>
-      <div class="brand">
+      <a class="brand" href="index.html" aria-label="Beranda English Masterbook">
         <span class="brand-mark" aria-hidden="true">EM</span>
         <div class="brand-text">
           <strong>English Masterbook</strong>
           <span>by Gaida Tsabita Ahmad · British English</span>
         </div>
-      </div>
+      </a>
       <div class="topbar-controls">
         <div class="text-size" role="group" aria-label="Ukuran teks">
           <button class="icon-btn" id="textDown" aria-label="Perkecil teks">A−</button>
@@ -84,360 +43,72 @@
       </div>
     </header>
 
-    <div class="layout">
-      <!-- Sidebar / Table of contents -->
-      <aside class="sidebar" id="sidebar" aria-label="Daftar isi">
-        <div class="sidebar-inner">
-          <p class="sidebar-title">Daftar Isi</p>
-          <nav class="toc" id="toc">
-            <a href="#cover" class="toc-link">Cover</a>
-            <a href="#objectives" class="toc-link">Learning Objectives</a>
-            <a href="#theory" class="toc-link">Theory</a>
-            <a href="#formula" class="toc-link">Rumus (Formula)</a>
-            <a href="#spelling" class="toc-link">Aturan -s / -es</a>
-            <a href="#signal" class="toc-link">Signal Words</a>
-            <a href="#notebook" class="toc-link">What to Write</a>
-            <a href="#mistakes" class="toc-link">Common Mistakes</a>
-            <a href="#british" class="toc-link">British English Notes</a>
-            <a href="#vocab" class="toc-link">Vocabulary</a>
-            <a href="#exercises" class="toc-link">Exercises</a>
-            <a href="#homework" class="toc-link">Homework</a>
-            <a href="#answers" class="toc-link">Answer Key</a>
-          </nav>
-          <div class="sidebar-progress">
-            <div class="sp-track"><div class="sp-fill" id="lessonProgress"></div></div>
-            <span id="lessonProgressLabel">0% selesai dibaca</span>
+    <main class="home">
+      <!-- Hero / Book cover -->
+      <section class="home-hero">
+        <span class="op-mark" aria-hidden="true">EM</span>
+        <p class="home-vol">Volume 1 · <span class="flag" aria-hidden="true">🇬🇧</span> British English</p>
+        <h1 class="home-title">English Masterbook</h1>
+        <p class="home-sub">Buku online belajar bahasa Inggris British ala Gaida Tsabita Ahmad. Pilih lesson di bawah untuk mulai belajar — dari grammar dasar sampai kosakata sehari-hari.</p>
+        <p class="home-flag"><span class="flag" aria-hidden="true">🇬🇧</span> Received Pronunciation (RP) · non-rhotic</p>
+      </section>
+
+      <!-- Daftar Isi -->
+      <p class="home-section-title">Daftar Isi · Lessons</p>
+      <div class="home-section-line" aria-hidden="true"></div>
+
+      <div class="lesson-grid">
+        <!-- Lesson 01 — ready -->
+        <a class="lesson-card" href="lesson-01.html">
+          <div class="lesson-card-top">
+            <span class="lesson-no">Lesson 01</span>
+            <span class="lesson-status ready">Tersedia</span>
           </div>
-        </div>
-      </aside>
-      <div class="overlay" id="overlay" hidden></div>
+          <h2 class="lesson-name">Present Simple</h2>
+          <p class="lesson-desc">Facts, habits, routines &amp; schedules. Rumus positif–negatif–tanya, aturan -s/-es, signal words, 20 kosakata daily routine, dan latihan bertingkat.</p>
+          <span class="lesson-cta">Mulai belajar →</span>
+        </a>
 
-      <!-- Main content -->
-      <main class="content">
-        <article class="book">
-          <!-- Cover -->
-          <section id="cover" class="cover">
-            <p class="cover-vol">English Masterbook · Volume 1</p>
-            <p class="cover-lesson">Lesson 01</p>
-            <h1 class="cover-title">Present Simple</h1>
-            <p class="cover-sub"><em>facts · habits · routines · schedules</em></p>
-            <p class="cover-flag"><span class="flag" aria-hidden="true">🇬🇧</span> British English (RP)</p>
-          </section>
+        <!-- Lesson 02 — coming soon -->
+        <a class="lesson-card is-locked" href="lesson-02.html" aria-disabled="true" tabindex="-1">
+          <div class="lesson-card-top">
+            <span class="lesson-no">Lesson 02</span>
+            <span class="lesson-status soon">Segera hadir</span>
+          </div>
+          <h2 class="lesson-name">Present Continuous</h2>
+          <p class="lesson-desc">Aksi yang sedang berlangsung sekarang. Materi sedang disiapkan.</p>
+          <span class="lesson-cta"><span class="lock-icon" aria-hidden="true">🔒</span> Belum tersedia</span>
+        </a>
 
-          <!-- Objectives -->
-          <section id="objectives" class="chapter">
-            <h2 class="chapter-title"><span class="chapter-emoji">🎯</span> Learning Objectives</h2>
-            <p class="lead">Setelah menyelesaikan lesson ini, kamu akan bisa:</p>
-            <ul class="check-list">
-              <li>Menjelaskan 4 fungsi Present Simple: <em>fact, habit, routine, schedule</em>.</li>
-              <li>Membentuk kalimat positif, negatif, dan tanya dengan benar (termasuk aturan -s/-es).</li>
-              <li>Menggunakan signal words (always, usually, often, dst.) di posisi yang tepat.</li>
-              <li>Menguasai 20 kosakata daily routine beserta pelafalan British English.</li>
-              <li>Mengerjakan latihan bertingkat (Easy → Medium → Hard) tanpa melihat kunci jawaban.</li>
-            </ul>
-          </section>
+        <!-- Lesson 03 — coming soon -->
+        <a class="lesson-card is-locked" href="lesson-03.html" aria-disabled="true" tabindex="-1">
+          <div class="lesson-card-top">
+            <span class="lesson-no">Lesson 03</span>
+            <span class="lesson-status soon">Segera hadir</span>
+          </div>
+          <h2 class="lesson-name">Past Simple</h2>
+          <p class="lesson-desc">Kejadian yang sudah selesai di masa lalu. Materi sedang disiapkan.</p>
+          <span class="lesson-cta"><span class="lock-icon" aria-hidden="true">🔒</span> Belum tersedia</span>
+        </a>
 
-          <!-- Theory -->
-          <section id="theory" class="chapter">
-            <h2 class="chapter-title"><span class="chapter-emoji">📖</span> Theory</h2>
-            <p>Present Simple dipakai untuk hal-hal yang bersifat umum, rutin, atau selalu benar — bukan sesuatu yang sedang terjadi sekarang. Ada empat fungsi utama:</p>
+        <!-- Lesson 04 — coming soon -->
+        <a class="lesson-card is-locked" href="lesson-04.html" aria-disabled="true" tabindex="-1">
+          <div class="lesson-card-top">
+            <span class="lesson-no">Lesson 04</span>
+            <span class="lesson-status soon">Segera hadir</span>
+          </div>
+          <h2 class="lesson-name">Future: will &amp; going to</h2>
+          <p class="lesson-desc">Membicarakan rencana dan prediksi masa depan. Materi sedang disiapkan.</p>
+          <span class="lesson-cta"><span class="lock-icon" aria-hidden="true">🔒</span> Belum tersedia</span>
+        </a>
+      </div>
 
-            <div class="fn-grid">
-              <div class="fn-card">
-                <span class="fn-tag">1 · Fact</span>
-                <p class="fn-desc">Sesuatu yang selalu benar.</p>
-                <p class="example" data-say="The sun rises in the east">The sun rises in the east.<button class="say-btn" aria-label="Dengarkan pelafalan">🔊</button></p>
-                <p class="translate">Matahari terbit di timur.</p>
-              </div>
-              <div class="fn-card">
-                <span class="fn-tag">2 · Habit</span>
-                <p class="fn-desc">Sesuatu yang biasa dilakukan berulang.</p>
-                <p class="example" data-say="She drinks coffee every morning">She drinks coffee every morning.<button class="say-btn" aria-label="Dengarkan pelafalan">🔊</button></p>
-                <p class="translate">Dia minum kopi setiap pagi.</p>
-              </div>
-              <div class="fn-card">
-                <span class="fn-tag">3 · Routine</span>
-                <p class="fn-desc">Aktivitas tetap sehari-hari.</p>
-                <p class="example" data-say="I go to school at six a m">I go to school at 6 a.m.<button class="say-btn" aria-label="Dengarkan pelafalan">🔊</button></p>
-                <p class="translate">Saya berangkat sekolah jam 6 pagi.</p>
-              </div>
-              <div class="fn-card">
-                <span class="fn-tag">4 · Schedule</span>
-                <p class="fn-desc">Jadwal tetap seperti transportasi/acara.</p>
-                <p class="example" data-say="The train leaves at nine p m">The train leaves at 9 p.m.<button class="say-btn" aria-label="Dengarkan pelafalan">🔊</button></p>
-                <p class="translate">Kereta berangkat jam 9 malam.</p>
-              </div>
-            </div>
-          </section>
-
-          <!-- Formula -->
-          <section id="formula" class="chapter">
-            <h2 class="chapter-title">Rumus (Formula)</h2>
-
-            <h3 class="sub-title positive">Positive</h3>
-            <div class="table-wrap">
-              <table>
-                <tbody>
-                  <tr>
-                    <th>Struktur</th>
-                    <td>S + V1 (+s / -es untuk he/she/it)</td>
-                  </tr>
-                  <tr>
-                    <th>I, you, we, they</th>
-                    <td>kata kerja bentuk dasar (V1), tanpa tambahan</td>
-                  </tr>
-                  <tr>
-                    <th>he, she, it</th>
-                    <td>kata kerja + -s / -es</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p class="example" data-say="I work in Jakarta">I work in Jakarta.<button class="say-btn" aria-label="Dengarkan pelafalan">🔊</button></p>
-            <p class="translate">Saya bekerja di Jakarta.</p>
-            <p class="example" data-say="She works in Jakarta">She works in Jakarta.<button class="say-btn" aria-label="Dengarkan pelafalan">🔊</button></p>
-            <p class="translate">Dia bekerja di Jakarta.</p>
-            <p class="example" data-say="He watches T V every night">He watches TV every night.<button class="say-btn" aria-label="Dengarkan pelafalan">🔊</button></p>
-            <p class="translate">Dia menonton TV setiap malam.</p>
-
-            <h3 class="sub-title negative">Negative</h3>
-            <div class="table-wrap">
-              <table>
-                <tbody>
-                  <tr>
-                    <th>Struktur</th>
-                    <td>S + do/does + not + V1</td>
-                  </tr>
-                  <tr>
-                    <th>I, you, we, they</th>
-                    <td>do not (don't) + V1</td>
-                  </tr>
-                  <tr>
-                    <th>he, she, it</th>
-                    <td>does not (doesn't) + V1 — kata kerja kembali ke bentuk dasar</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p class="example" data-say="I don't like spicy food">I don't like spicy food.<button class="say-btn" aria-label="Dengarkan pelafalan">🔊</button></p>
-            <p class="translate">Saya tidak suka makanan pedas.</p>
-            <p class="example" data-say="He doesn't play football">He doesn't play football.<button class="say-btn" aria-label="Dengarkan pelafalan">🔊</button></p>
-            <p class="translate">Dia tidak bermain sepak bola.</p>
-
-            <h3 class="sub-title question">Question</h3>
-            <div class="table-wrap">
-              <table>
-                <tbody>
-                  <tr>
-                    <th>Struktur</th>
-                    <td>Do/Does + S + V1 ?</td>
-                  </tr>
-                  <tr>
-                    <th>I, you, we, they</th>
-                    <td>Do + S + V1?</td>
-                  </tr>
-                  <tr>
-                    <th>he, she, it</th>
-                    <td>Does + S + V1?</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p class="example" data-say="Do you speak English">Do you speak English?<button class="say-btn" aria-label="Dengarkan pelafalan">🔊</button></p>
-            <p class="translate">Apakah kamu bisa bahasa Inggris?</p>
-            <p class="example" data-say="Does she live here">Does she live here?<button class="say-btn" aria-label="Dengarkan pelafalan">🔊</button></p>
-            <p class="translate">Apakah dia tinggal di sini?</p>
-          </section>
-
-          <!-- Spelling -->
-          <section id="spelling" class="chapter">
-            <h2 class="chapter-title">Aturan Ejaan -s / -es</h2>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Pola</th>
-                    <th>Contoh</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Kata kerja biasa + s</td>
-                    <td><code>play → plays</code>, <code>eat → eats</code></td>
-                  </tr>
-                  <tr>
-                    <td>Berakhiran -s, -sh, -ch, -x, -o + es</td>
-                    <td><code>watch → watches</code>, <code>go → goes</code></td>
-                  </tr>
-                  <tr>
-                    <td>Berakhiran konsonan + y → y jadi i + es</td>
-                    <td><code>study → studies</code>, <code>cry → cries</code></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          <!-- Signal words -->
-          <section id="signal" class="chapter">
-            <h2 class="chapter-title">Signal Words</h2>
-            <div class="signal-scale">
-              <span class="sig" style="--p: 100%">always <b>100%</b></span>
-              <span class="sig" style="--p: 90%">usually <b>90%</b></span>
-              <span class="sig" style="--p: 70%">often <b>70%</b></span>
-              <span class="sig" style="--p: 50%">sometimes <b>50%</b></span>
-              <span class="sig" style="--p: 20%">rarely <b>20%</b></span>
-              <span class="sig" style="--p: 0%">never <b>0%</b></span>
-            </div>
-            <p class="muted">every day / every week / every year</p>
-            <div class="callout">
-              <p><strong>Posisi:</strong> biasanya <em>sebelum</em> kata kerja utama, tapi <em>setelah</em> kata kerja "to be".</p>
-              <p class="example" data-say="She usually walks to school">She usually walks to school.<button class="say-btn" aria-label="Dengarkan pelafalan">🔊</button></p>
-              <p class="translate">posisi sebelum kata kerja utama</p>
-              <p class="example" data-say="She is usually late">She is usually late.<button class="say-btn" aria-label="Dengarkan pelafalan">🔊</button></p>
-              <p class="translate">posisi setelah "to be"</p>
-            </div>
-          </section>
-
-          <!-- Notebook -->
-          <section id="notebook" class="chapter">
-            <h2 class="chapter-title"><span class="chapter-emoji">📝</span> What to Write in Your Notebook</h2>
-            <div class="callout callout-accent">
-              <p class="lead">Bagian ini <strong>WAJIB</strong> disalin ke buku catatan — inti yang paling sering dipakai:</p>
-              <ul class="check-list">
-                <li>Rumus Positive, Negative, Question (3 baris di atas).</li>
-                <li>Tabel aturan ejaan -s/-es (3 baris).</li>
-                <li>Daftar signal words + persentase (always → never).</li>
-                <li>4 fungsi Present Simple beserta 1 contoh kalimat masing-masing.</li>
-              </ul>
-            </div>
-          </section>
-
-          <!-- Common mistakes -->
-          <section id="mistakes" class="chapter">
-            <h2 class="chapter-title"><span class="chapter-emoji">⚠️</span> Common Mistakes</h2>
-            <p>Kesalahan yang sering dilakukan penutur bahasa Indonesia saat belajar Present Simple:</p>
-            <ul class="mistake-list">
-              <li><span class="wrong">She work here</span> <span class="arrow">→</span> <span class="right">She works here</span><br /><small>Lupa menambahkan -s/-es untuk he/she/it.</small></li>
-              <li><span class="wrong">He doesn't plays</span> <span class="arrow">→</span> <span class="right">He doesn't play</span><br /><small>Menambahkan -s dua kali setelah does/don't.</small></li>
-              <li><small>Menerjemahkan langsung dari struktur bahasa Indonesia (tanpa auxiliary do/does) sehingga lupa membuat kalimat tanya/negatif dengan benar.</small></li>
-              <li><span class="wrong">I drink coffee always</span> <span class="arrow">→</span> <span class="right">I always drink coffee</span><br /><small>Signal word sebaiknya sebelum kata kerja utama, bukan di akhir.</small></li>
-              <li><span class="wrong">studys</span> <span class="arrow">→</span> <span class="right">studies</span><br /><small>Salah ejaan pada kata berakhiran konsonan + y.</small></li>
-            </ul>
-          </section>
-
-          <!-- British notes -->
-          <section id="british" class="chapter">
-            <h2 class="chapter-title"><span class="chapter-emoji">🇬🇧</span> British English Notes</h2>
-            <p>Perbedaan kecil British vs American English yang relevan untuk Present Simple:</p>
-            <ul class="check-list">
-              <li><strong>Pelafalan non-rhotic:</strong> huruf "r" di akhir kata (shower, work, dinner) tidak diucapkan jelas — beda dengan American English yang mengucapkan "r"-nya.</li>
-              <li><strong>Ejaan British</strong> tetap dipakai untuk kosakata terkait rutinitas (mis. "colour", "favourite") walau tidak muncul langsung di lesson ini — tetap konsisten British spelling di lesson berikutnya.</li>
-              <li><strong>Struktur grammar</strong> Present Simple sendiri SAMA di British dan American English — perbedaannya hanya di pelafalan dan beberapa ejaan kata lain.</li>
-            </ul>
-          </section>
-
-          <!-- Vocabulary -->
-          <section id="vocab" class="chapter">
-            <h2 class="chapter-title"><span class="chapter-emoji">💬</span> Vocabulary &amp; Pronunciation</h2>
-            <p>20 kosakata daily routine, IPA British English (RP, non-rhotic), dan pelafalan sederhana ala Indonesia. Ketuk tombol 🔊 untuk mendengar pelafalan British.</p>
-            <div class="vocab-grid" id="vocabGrid"></div>
-          </section>
-
-          <!-- Exercises -->
-          <section id="exercises" class="chapter">
-            <h2 class="chapter-title"><span class="chapter-emoji">✍️</span> Exercises</h2>
-            <p class="muted">Kerjakan dulu tanpa melihat Answer Key. Klik "Periksa jawaban" untuk cek isian singkat.</p>
-
-            <h3 class="sub-title">Easy <span class="level-badge easy">Easy</span></h3>
-            <p>Lengkapi dengan bentuk Present Simple yang tepat.</p>
-            <ol class="ex-list">
-              <li>She <input class="ex-input" data-answer="works" size="8" aria-label="jawaban nomor 1" /> (work) at a hospital every day.</li>
-              <li>My father <input class="ex-input" data-answer="goes" size="8" aria-label="jawaban nomor 2" /> (go) to the office by car.</li>
-              <li>They <input class="ex-input" data-answer="don't like|do not like|dont like" size="12" aria-label="jawaban nomor 3" /> (not / like) horror movies.</li>
-            </ol>
-
-            <h3 class="sub-title">Medium <span class="level-badge medium">Medium</span></h3>
-            <p>Bentuk kalimat tanya dan negatif.</p>
-            <ol class="ex-list">
-              <li><input class="ex-input" data-answer="does" size="6" aria-label="jawaban medium 1a" /> your brother <input class="ex-input" data-answer="play" size="6" aria-label="jawaban medium 1b" /> (play) the guitar?</li>
-              <li>I <input class="ex-input" data-answer="don't drink|do not drink|dont drink" size="12" aria-label="jawaban medium 2" /> (not / drink) coffee at night.</li>
-              <li>
-                Ubah menjadi kalimat tanya: <em>"He studies English every day."</em>
-                <input class="ex-input wide" data-answer="does he study english every day?|does he study english every day" aria-label="jawaban medium 3" />
-              </li>
-            </ol>
-
-            <h3 class="sub-title">Hard <span class="level-badge hard">Hard</span></h3>
-            <p>Gunakan signal word yang sesuai dan perbaiki kalimat yang salah.</p>
-            <ol class="ex-list">
-              <li>
-                Perbaiki: <em>"She work here always."</em>
-                <input class="ex-input wide" data-answer="she always works here.|she always works here" aria-label="jawaban hard 1" />
-              </li>
-              <li>
-                Susun kalimat: <em>usually / breakfast / at 7 a.m. / I / have.</em>
-                <input class="ex-input wide" data-answer="i usually have breakfast at 7 a.m.|i usually have breakfast at 7 am|i usually have breakfast at 7 a.m" aria-label="jawaban hard 2" />
-              </li>
-              <li>
-                Tulis 1 kalimat fact, 1 habit, 1 routine, dan 1 schedule tentang dirimu sendiri.
-                <textarea class="ex-free" rows="4" placeholder="Tulis 4 kalimatmu di sini..." aria-label="jawaban hard 3"></textarea>
-                <small class="muted">Jawaban bebas — akan disimpan otomatis di perangkatmu.</small>
-              </li>
-            </ol>
-
-            <div class="ex-actions">
-              <button class="btn" id="checkBtn">Periksa jawaban</button>
-              <button class="btn btn-ghost" id="resetBtn">Reset</button>
-              <span class="score" id="score" hidden></span>
-            </div>
-          </section>
-
-          <!-- Homework -->
-          <section id="homework" class="chapter">
-            <h2 class="chapter-title"><span class="chapter-emoji">🏠</span> Homework</h2>
-            <p>Tulis <strong>10 kalimat</strong> tentang rutinitas harianmu (daily routine) menggunakan Present Simple. Gunakan minimal <strong>3 signal words</strong> (always, usually, often, sometimes, every day, dst).</p>
-            <textarea class="homework" id="homework" rows="10" placeholder="1. I always wake up at 5 a.m.&#10;2. ..." aria-label="Jawaban homework"></textarea>
-            <p class="muted" id="hwStatus">Tersimpan otomatis di perangkatmu.</p>
-          </section>
-
-          <!-- Answer key -->
-          <section id="answers" class="chapter">
-            <h2 class="chapter-title"><span class="chapter-emoji">⭐</span> Answer Key</h2>
-            <p class="muted"><em>Jangan intip sebelum selesai mengerjakan semua exercises di atas!</em></p>
-            <button class="btn btn-outline" id="answerToggle" aria-expanded="false">Tampilkan kunci jawaban</button>
-            <div class="answer-body" id="answerBody" hidden>
-              <h3 class="sub-title">Easy</h3>
-              <ol class="ex-list">
-                <li>works</li>
-                <li>goes</li>
-                <li>don't like</li>
-              </ol>
-              <h3 class="sub-title">Medium</h3>
-              <ol class="ex-list">
-                <li>Does … play</li>
-                <li>don't drink</li>
-                <li>Does he study English every day?</li>
-              </ol>
-              <h3 class="sub-title">Hard</h3>
-              <ol class="ex-list">
-                <li>She always works here. <small>(signal word pindah ke sebelum kata kerja utama)</small></li>
-                <li>I usually have breakfast at 7 a.m.</li>
-                <li>Jawaban bebas — pastikan formatnya sesuai 4 fungsi (fact/habit/routine/schedule).</li>
-              </ol>
-            </div>
-          </section>
-
-          <footer class="book-footer">
-            <p class="ornament">✧ ■ ✧</p>
-            <p><em>Lesson 01 · Present Simple · English Masterbook · Volume 1</em></p>
-            <p class="muted">by Gaida Tsabita Ahmad</p>
-          </footer>
-        </article>
-      </main>
-    </div>
-
-    <button class="to-top" id="toTop" aria-label="Kembali ke atas" hidden>↑</button>
+      <footer class="home-footer">
+        <p class="ornament">✧ ■ ✧</p>
+        <p><em>English Masterbook · Volume 1 · British English</em></p>
+        <p class="muted">by Gaida Tsabita Ahmad</p>
+      </footer>
+    </main>
 
     <script src="script.js"></script>
   </body>

@@ -1,6 +1,6 @@
 /* ============================================================
-   English Masterbook by Gaida Gaa
-   Lesson 01 · Present Simple — interactivity
+   English Masterbook by Gaida Tsabita Ahmad
+   Shared interactivity (Beranda + semua lesson)
    ============================================================ */
 
 (function () {
@@ -24,7 +24,7 @@
     },
   };
 
-  /* ---------- Vocabulary data ---------- */
+  /* ---------- Vocabulary data (Lesson 01) ---------- */
   const VOCAB = [
     ['wake up', '/weɪk ʌp/', 'weik ap', 'bangun tidur'],
     ['get up', '/ɡet ʌp/', 'get ap', 'bangkit dari tempat tidur'],
@@ -62,7 +62,6 @@
         <span class="vocab-ipa">${ipa}</span>
         <span class="vocab-read">Cara baca: ${read}</span>
         <span class="vocab-mean">${mean}</span>`;
-      // strip the "one's"/parenthetical for cleaner speech
       const spoken = word
         .replace(/\(.*?\)/g, '')
         .replace('/work', '')
@@ -108,7 +107,6 @@
     speechSynthesis.speak(u);
   }
 
-  // Delegate all speak buttons (examples + vocab)
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('.say-btn');
     if (!btn) return;
@@ -120,7 +118,7 @@
     if (text) speak(text.trim(), btn);
   });
 
-  /* ---------- Theme toggle ---------- */
+  /* ---------- Theme toggle (all pages) ---------- */
   const html = document.documentElement;
   function applyTheme(t) {
     html.setAttribute('data-theme', t);
@@ -129,13 +127,16 @@
   }
   const savedTheme = store.get('em-theme', window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   applyTheme(savedTheme);
-  $('#themeBtn').addEventListener('click', () => {
-    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    applyTheme(next);
-    store.set('em-theme', next);
-  });
+  const themeBtn = $('#themeBtn');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      store.set('em-theme', next);
+    });
+  }
 
-  /* ---------- Text size ---------- */
+  /* ---------- Text size (all pages) ---------- */
   let size = parseInt(store.get('em-size', '18'), 10);
   function applySize() {
     size = Math.min(22, Math.max(15, size));
@@ -143,28 +144,33 @@
     store.set('em-size', String(size));
   }
   applySize();
-  $('#textUp').addEventListener('click', () => {
-    size += 1;
-    applySize();
-  });
-  $('#textDown').addEventListener('click', () => {
-    size -= 1;
-    applySize();
-  });
+  const textUp = $('#textUp');
+  const textDown = $('#textDown');
+  if (textUp)
+    textUp.addEventListener('click', () => {
+      size += 1;
+      applySize();
+    });
+  if (textDown)
+    textDown.addEventListener('click', () => {
+      size -= 1;
+      applySize();
+    });
 
   /* ---------- Sidebar drawer (mobile) ---------- */
   const sidebar = $('#sidebar');
   const overlay = $('#overlay');
   const menuBtn = $('#menuBtn');
   function openMenu(open) {
+    if (!sidebar || !overlay || !menuBtn) return;
     sidebar.classList.toggle('open', open);
     overlay.hidden = !open;
     menuBtn.setAttribute('aria-expanded', String(open));
   }
-  menuBtn.addEventListener('click', () => openMenu(!sidebar.classList.contains('open')));
-  overlay.addEventListener('click', () => openMenu(false));
+  if (menuBtn) menuBtn.addEventListener('click', () => openMenu(!sidebar.classList.contains('open')));
+  if (overlay) overlay.addEventListener('click', () => openMenu(false));
 
-  /* ---------- TOC: smooth scroll + close drawer + scrollspy ---------- */
+  /* ---------- TOC: close drawer + scrollspy ---------- */
   const tocLinks = $$('.toc-link');
   tocLinks.forEach((link) => {
     link.addEventListener('click', () => {
@@ -173,18 +179,20 @@
   });
 
   const sections = $$('section[id]');
-  const spy = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const id = entry.target.id;
-          tocLinks.forEach((l) => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
-        }
-      });
-    },
-    { rootMargin: '-45% 0px -50% 0px', threshold: 0 },
-  );
-  sections.forEach((s) => spy.observe(s));
+  if (sections.length && tocLinks.length) {
+    const spy = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            tocLinks.forEach((l) => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+          }
+        });
+      },
+      { rootMargin: '-45% 0px -50% 0px', threshold: 0 },
+    );
+    sections.forEach((s) => spy.observe(s));
+  }
 
   /* ---------- Reading progress ---------- */
   const progressBar = $('#progressBar');
@@ -196,14 +204,14 @@
     const scrollTop = window.scrollY;
     const docH = document.documentElement.scrollHeight - window.innerHeight;
     const pct = docH > 0 ? Math.min(100, (scrollTop / docH) * 100) : 0;
-    progressBar.style.width = pct + '%';
+    if (progressBar) progressBar.style.width = pct + '%';
     maxRead = Math.max(maxRead, pct);
-    lessonProgress.style.width = maxRead + '%';
-    lessonProgressLabel.textContent = Math.round(maxRead) + '% selesai dibaca';
-    toTop.hidden = scrollTop < 400;
+    if (lessonProgress) lessonProgress.style.width = maxRead + '%';
+    if (lessonProgressLabel) lessonProgressLabel.textContent = Math.round(maxRead) + '% selesai dibaca';
+    if (toTop) toTop.hidden = scrollTop < 400;
   }
   window.addEventListener('scroll', onScroll, { passive: true });
-  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  if (toTop) toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
   /* ---------- Exercises: check answers ---------- */
   function normalize(s) {
@@ -214,37 +222,45 @@
   const scoreEl = $('#score');
   const inputs = $$('.ex-input');
 
-  checkBtn.addEventListener('click', () => {
-    let correct = 0;
-    inputs.forEach((inp) => {
-      const accepted = (inp.dataset.answer || '').split('|').map(normalize);
-      const val = normalize(inp.value);
-      const ok = val !== '' && accepted.includes(val);
-      inp.classList.toggle('correct', ok);
-      inp.classList.toggle('incorrect', !ok && val !== '');
-      if (ok) correct++;
+  if (checkBtn) {
+    checkBtn.addEventListener('click', () => {
+      let correct = 0;
+      inputs.forEach((inp) => {
+        const accepted = (inp.dataset.answer || '').split('|').map(normalize);
+        const val = normalize(inp.value);
+        const ok = val !== '' && accepted.includes(val);
+        inp.classList.toggle('correct', ok);
+        inp.classList.toggle('incorrect', !ok && val !== '');
+        if (ok) correct++;
+      });
+      if (scoreEl) {
+        scoreEl.hidden = false;
+        scoreEl.textContent = `Skor: ${correct}/${inputs.length} benar`;
+      }
     });
-    scoreEl.hidden = false;
-    scoreEl.textContent = `Skor: ${correct}/${inputs.length} benar`;
-  });
+  }
 
-  resetBtn.addEventListener('click', () => {
-    inputs.forEach((inp) => {
-      inp.value = '';
-      inp.classList.remove('correct', 'incorrect');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      inputs.forEach((inp) => {
+        inp.value = '';
+        inp.classList.remove('correct', 'incorrect');
+      });
+      if (scoreEl) scoreEl.hidden = true;
     });
-    scoreEl.hidden = true;
-  });
+  }
 
   /* ---------- Answer key toggle ---------- */
   const answerToggle = $('#answerToggle');
   const answerBody = $('#answerBody');
-  answerToggle.addEventListener('click', () => {
-    const show = answerBody.hidden;
-    answerBody.hidden = !show;
-    answerToggle.setAttribute('aria-expanded', String(show));
-    answerToggle.textContent = show ? 'Sembunyikan kunci jawaban' : 'Tampilkan kunci jawaban';
-  });
+  if (answerToggle && answerBody) {
+    answerToggle.addEventListener('click', () => {
+      const show = answerBody.hidden;
+      answerBody.hidden = !show;
+      answerToggle.setAttribute('aria-expanded', String(show));
+      answerToggle.textContent = show ? 'Sembunyikan kunci jawaban' : 'Tampilkan kunci jawaban';
+    });
+  }
 
   /* ---------- Autosave: homework + free exercise ---------- */
   function autosave(el, key) {
@@ -256,31 +272,44 @@
       t = setTimeout(() => {
         store.set(key, el.value);
         const status = $('#hwStatus');
-        if (status && key === 'em-homework') {
+        if (status && key.startsWith('em-homework')) {
           status.textContent = 'Tersimpan ✓ ' + new Date().toLocaleTimeString('id-ID');
         }
       }, 400);
     });
   }
-  autosave($('#homework'), 'em-homework');
-  autosave($('.ex-free'), 'em-hard3');
+  // Namespace autosave keys per-lesson so lessons don't overwrite each other.
+  const lessonKey = document.body.getAttribute('data-lesson') || 'x';
+  autosave($('#homework'), 'em-homework-' + lessonKey);
+  autosave($('.ex-free'), 'em-hard3-' + lessonKey);
 
-  /* ---------- Opening / Intro (tampil setiap kali dibuka) ---------- */
+  /* ---------- Opening / Intro (per-lesson) ---------- */
   const opening = $('#opening');
   const startBtn = $('#startBtn');
+  function openOpening() {
+    if (!opening) return;
+    opening.hidden = false;
+    opening.classList.remove('closing');
+    document.body.classList.add('opening-active');
+    window.scrollTo({ top: 0 });
+    if (startBtn) startBtn.focus({ preventScroll: true });
+  }
+  function closeOpening() {
+    if (!opening) return;
+    opening.classList.add('closing');
+    document.body.classList.remove('opening-active');
+    window.scrollTo({ top: 0 });
+    setTimeout(() => {
+      opening.hidden = true;
+    }, 460);
+  }
   if (opening && startBtn) {
     document.body.classList.add('opening-active');
     startBtn.focus({ preventScroll: true });
-    const closeOpening = () => {
-      opening.classList.add('closing');
-      document.body.classList.remove('opening-active');
-      window.scrollTo({ top: 0 });
-      setTimeout(() => {
-        opening.hidden = true;
-      }, 460);
-    };
     startBtn.addEventListener('click', closeOpening);
   }
+  // "Lihat pembuka lagi" buttons anywhere on the page
+  $$('[data-reopen]').forEach((b) => b.addEventListener('click', openOpening));
 
   /* ---------- Init ---------- */
   buildVocab();
