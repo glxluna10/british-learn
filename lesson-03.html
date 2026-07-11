@@ -4,15 +4,66 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#14342b" />
-    <meta name="description" content="English Masterbook by Gaida Tsabita Ahmad — Lesson 03: Past Simple (segera hadir)." />
-    <title>Lesson 03 · Past Simple · English Masterbook</title>
+    <meta
+      name="description"
+      content="English Masterbook by Gaida Tsabita Ahmad — Lesson 03: Present Simple vs Present Continuous (British English). Habit atau happening now? Comparison table, signal words, kosakata time expressions, dan latihan bertingkat."
+    />
+    <title>Lesson 03 · Present Simple vs Present Continuous · English Masterbook</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body data-lesson="03">
+    <!-- Opening / Lesson intro -->
+    <div class="opening" id="opening" role="dialog" aria-modal="true" aria-label="Pembuka lesson">
+      <div class="opening-inner">
+        <div class="opening-book">
+          <p class="op-brand"><span class="op-mark" aria-hidden="true">EM</span> English Masterbook</p>
+          <p class="op-vol">Volume 1 · <span class="flag" aria-hidden="true">🇬🇧</span> British English</p>
+
+          <div class="op-divider" aria-hidden="true">✦ ■ ✦</div>
+
+          <p class="op-lesson">Lesson 03</p>
+          <h1 class="op-title">Present Simple vs Present Continuous</h1>
+          <p class="op-sub"><em>habit or happening now?</em></p>
+
+          <div class="op-welcome">
+            <p class="op-hi">Selamat datang kembali</p>
+            <p>
+              Halo lagi! Aku <strong>Gaida Tsabita Ahmad</strong>. Kamu sudah belajar dua tense pertama secara terpisah. Sekarang saatnya <em>membandingkan</em> keduanya sampai kamu benar-benar tahu kapan memakai masing-masing. Ini yang
+              akan kamu kuasai:
+            </p>
+            <ul class="op-points">
+              <li>Perbedaan fungsi Present Simple &amp; Present Continuous</li>
+              <li>Comparison table: signal words &amp; rumus berdampingan</li>
+              <li>Cara memilih tense yang tepat sesuai konteks</li>
+              <li>20 kosakata <em>time expressions</em> (penanda waktu) + pelafalan British</li>
+              <li>Latihan bertingkat + homework "My Normal Day vs Today"</li>
+            </ul>
+          </div>
+
+          <div class="op-actions">
+            <button class="btn op-start" id="startBtn" type="button">Mulai Belajar →</button>
+            <a class="op-back" href="index.html">← Kembali ke Beranda / Daftar Isi</a>
+          </div>
+          <p class="op-hint">Perkiraan 15–20 menit · siapkan buku catatanmu dulu</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reading progress bar -->
+    <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+    <!-- Top bar -->
     <header class="topbar">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Buka daftar isi" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
       <a class="brand" href="index.html" aria-label="Beranda English Masterbook">
         <span class="brand-mark" aria-hidden="true">EM</span>
         <div class="brand-text">
@@ -28,6 +79,10 @@
           </svg>
           <span>Beranda</span>
         </a>
+        <div class="text-size" role="group" aria-label="Ukuran teks">
+          <button class="icon-btn" id="textDown" aria-label="Perkecil teks">A−</button>
+          <button class="icon-btn" id="textUp" aria-label="Perbesar teks">A+</button>
+        </div>
         <button class="icon-btn theme-btn" id="themeBtn" aria-label="Ganti mode terang/gelap">
           <svg class="ico-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
             <circle cx="12" cy="12" r="4" />
@@ -45,19 +100,469 @@
       </div>
     </header>
 
-    <main class="soon-wrap">
-      <div class="soon-card">
-        <div class="soon-icon" aria-hidden="true">🔒</div>
-        <p class="soon-lesson">Lesson 03</p>
-        <h1 class="soon-title">Past Simple</h1>
-        <span class="soon-badge">Segera hadir</span>
-        <p class="soon-desc">Materi untuk lesson ini sedang aku siapkan. Nantinya akan membahas kejadian yang sudah selesai di masa lalu (V2 &amp; regular/irregular verbs), lengkap dengan latihan dan kosakata seperti Lesson 01. Sabar ya! 🌱</p>
-        <div class="soon-actions">
-          <a class="btn" href="index.html">← Kembali ke Beranda</a>
-          <a class="btn btn-outline" href="lesson-01.html">Ulangi Lesson 01 · Present Simple</a>
+    <div class="layout">
+      <!-- Sidebar / Table of contents -->
+      <aside class="sidebar" id="sidebar" aria-label="Daftar isi">
+        <div class="sidebar-inner">
+          <p class="sidebar-title">Lesson 03</p>
+          <nav class="toc" id="toc">
+            <a href="index.html" class="toc-link toc-home">← Beranda / Daftar Isi</a>
+            <a href="#cover" class="toc-link">Cover</a>
+            <a href="#time" class="toc-link">Estimated Study Time</a>
+            <a href="#objectives" class="toc-link">Learning Objectives</a>
+            <a href="#theory" class="toc-link">Theory</a>
+            <a href="#compare" class="toc-link">Comparison Table</a>
+            <a href="#choose" class="toc-link">Cara Memilih Tense</a>
+            <a href="#notebook" class="toc-link">What to Write</a>
+            <a href="#mistakes" class="toc-link">Common Mistakes</a>
+            <a href="#british" class="toc-link">British English Notes</a>
+            <a href="#vocab" class="toc-link">Vocabulary</a>
+            <a href="#exercises" class="toc-link">Exercises</a>
+            <a href="#homework" class="toc-link">Homework</a>
+            <a href="#answers" class="toc-link">Answer Key</a>
+            <a href="#checklist" class="toc-link">Lesson Checklist</a>
+          </nav>
+          <div class="sidebar-progress">
+            <div class="sp-track"><div class="sp-fill" id="lessonProgress"></div></div>
+            <span id="lessonProgressLabel">0% selesai dibaca</span>
+          </div>
         </div>
-      </div>
-    </main>
+      </aside>
+      <div class="overlay" id="overlay" hidden></div>
+
+      <!-- Main content -->
+      <main class="content">
+        <article class="book">
+          <!-- Cover -->
+          <section id="cover" class="cover">
+            <p class="cover-vol">English Masterbook · Volume 1</p>
+            <p class="cover-lesson">Lesson 03</p>
+            <h1 class="cover-title">Present Simple vs Present Continuous</h1>
+            <p class="cover-sub"><em>habit or happening now?</em></p>
+            <p class="cover-flag"><span class="flag" aria-hidden="true">🇬🇧</span> British English (RP) · Review &amp; Mastery</p>
+            <div class="cover-meta">
+              <span class="cover-meta-item">🟢 Difficulty: <strong>★★★☆☆</strong></span>
+              <span class="cover-meta-item">⏱️ Estimasi belajar: <strong>±80 menit</strong></span>
+            </div>
+          </section>
+
+          <!-- Estimated study time -->
+          <section id="time" class="chapter">
+            <h2 class="chapter-title"><span class="chapter-emoji">⏱️</span> Estimated Study Time</h2>
+            <div class="table-wrap">
+              <table>
+                <tbody>
+                  <tr>
+                    <th>📖 Theory &amp; Comparison</th>
+                    <td>20 menit</td>
+                  </tr>
+                  <tr>
+                    <th>📝 Notes (catatan)</th>
+                    <td>10 menit</td>
+                  </tr>
+                  <tr>
+                    <th>💬 Vocabulary</th>
+                    <td>15 menit</td>
+                  </tr>
+                  <tr>
+                    <th>✍️ Exercises</th>
+                    <td>20 menit</td>
+                  </tr>
+                  <tr>
+                    <th>🏠 Homework</th>
+                    <td>15 menit</td>
+                  </tr>
+                  <tr>
+                    <th>Total</th>
+                    <td><strong>±80 menit</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- Objectives -->
+          <section id="objectives" class="chapter">
+            <h2 class="chapter-title"><span class="chapter-emoji">🎯</span> Learning Objectives</h2>
+            <p class="lead">Setelah menyelesaikan lesson ini, kamu akan bisa:</p>
+            <ul class="check-list">
+              <li>Membedakan Present Simple dan Present Continuous.</li>
+              <li>Memilih tense yang tepat sesuai konteks.</li>
+              <li>Mengenali signal words yang menunjukkan tense.</li>
+              <li>Menghindari kesalahan umum saat berbicara dan menulis.</li>
+              <li>Menulis paragraf pendek yang menggabungkan kedua tense.</li>
+            </ul>
+          </section>
+
+          <!-- Theory -->
+          <section id="theory" class="chapter">
+            <h2 class="chapter-title"><span class="chapter-emoji">📖</span> Theory</h2>
+            <p>Kedua tense ini sama-sama membicarakan masa kini, tapi <strong>sudut pandangnya berbeda</strong>: satu tentang kebiasaan, satu tentang apa yang sedang terjadi. Bandingkan keduanya:</p>
+
+            <div class="fn-grid">
+              <div class="fn-card">
+                <span class="fn-tag">Present Simple</span>
+                <p class="fn-desc">Facts · Habits · Routines · Schedules — hal yang umum benar atau berulang.</p>
+                <p class="example" data-say="I study English every day">I study English every day.<button class="say-btn" aria-label="Dengarkan pelafalan">🔊</button></p>
+                <p class="translate">Belajar bahasa Inggris memang rutinitasku.</p>
+              </div>
+              <div class="fn-card">
+                <span class="fn-tag">Present Continuous</span>
+                <p class="fn-desc">Happening now · Temporary · Changing · Future arrangements — apa yang sedang berlangsung.</p>
+                <p class="example" data-say="I am studying English now">I am studying English now.<button class="say-btn" aria-label="Dengarkan pelafalan">🔊</button></p>
+                <p class="translate">Saat ini aku sedang belajar.</p>
+              </div>
+            </div>
+
+            <div class="callout">
+              <p><strong>Kunci utamanya:</strong> tanyakan pada dirimu — apakah ini <em>kebiasaan/fakta</em> (Simple) atau sesuatu yang <em>sedang terjadi sekarang / sementara</em> (Continuous)?</p>
+            </div>
+          </section>
+
+          <!-- Comparison Table -->
+          <section id="compare" class="chapter">
+            <h2 class="chapter-title"><span class="chapter-emoji">⚖️</span> Comparison Table</h2>
+            <p>Letakkan keduanya berdampingan supaya perbedaannya langsung terlihat:</p>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Present Simple</th>
+                    <th>Present Continuous</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>every day</td>
+                    <td>now</td>
+                  </tr>
+                  <tr>
+                    <td>usually</td>
+                    <td>right now</td>
+                  </tr>
+                  <tr>
+                    <td>often</td>
+                    <td>at the moment</td>
+                  </tr>
+                  <tr>
+                    <td>habits (kebiasaan)</td>
+                    <td>happening now (sedang terjadi)</td>
+                  </tr>
+                  <tr>
+                    <td><code>V1 (+s/-es)</code></td>
+                    <td><code>am/is/are + V-ing</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="example" data-say="She reads a book every night">She reads a book every night.<button class="say-btn" aria-label="Dengarkan pelafalan">🔊</button></p>
+            <p class="translate">kebiasaan → Present Simple</p>
+            <p class="example" data-say="Look! She is reading a book right now">Look! She is reading a book right now.<button class="say-btn" aria-label="Dengarkan pelafalan">🔊</button></p>
+            <p class="translate">sedang terjadi → Present Continuous</p>
+          </section>
+
+          <!-- How to choose -->
+          <section id="choose" class="chapter">
+            <h2 class="chapter-title"><span class="chapter-emoji">🧭</span> Cara Memilih Tense</h2>
+            <p>Gunakan panduan cepat ini setiap kali ragu:</p>
+            <ul class="check-list">
+              <li>Ada signal word seperti <em>every day, usually, often, always</em>? → <strong>Present Simple</strong>.</li>
+              <li>Ada signal word seperti <em>now, right now, at the moment, Look!, Listen!</em>? → <strong>Present Continuous</strong>.</li>
+              <li>Fakta ilmiah atau jadwal tetap? → <strong>Present Simple</strong>.</li>
+              <li>Situasi sementara atau sedang berubah? → <strong>Present Continuous</strong>.</li>
+            </ul>
+            <div class="callout callout-accent">
+              <p><strong>Ingat:</strong> stative verbs seperti <em>know, like, want, believe, understand</em> hampir selalu memakai Present Simple, walaupun konteksnya "sekarang".</p>
+              <p class="example" data-say="I want some tea now">I want some tea now.<button class="say-btn" aria-label="Dengarkan pelafalan">🔊</button></p>
+              <p class="translate">bukan <em>I am wanting…</em></p>
+            </div>
+          </section>
+
+          <!-- Notebook -->
+          <section id="notebook" class="chapter">
+            <h2 class="chapter-title"><span class="chapter-emoji">📝</span> What to Write in Your Notebook</h2>
+            <div class="callout callout-accent">
+              <p class="lead">Bagian ini <strong>WAJIB</strong> disalin ke buku catatan:</p>
+              <ul class="check-list">
+                <li>Perbandingan fungsi kedua tense.</li>
+                <li>Perbandingan rumus (V1 vs am/is/are + V-ing).</li>
+                <li>Perbandingan signal words (every day/usually vs now/right now).</li>
+                <li>Kata kerja yang berubah menjadi V-ing.</li>
+                <li>Kata kerja (stative) yang tetap V1.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Common mistakes -->
+          <section id="mistakes" class="chapter">
+            <h2 class="chapter-title"><span class="chapter-emoji">⚠️</span> Common Mistakes</h2>
+            <p>Kesalahan yang sering dilakukan saat mencampur kedua tense ini:</p>
+            <ul class="mistake-list">
+              <li><span class="wrong">I study now</span> <span class="arrow">→</span> <span class="right">I am studying now</span><br /><small>Ada "now" → pakai Present Continuous.</small></li>
+              <li><span class="wrong">She is going to school every day</span> <span class="arrow">→</span> <span class="right">She goes to school every day</span><br /><small>Ada "every day" (kebiasaan) → pakai Present Simple.</small></li>
+              <li><span class="wrong">He is always drink coffee</span> <span class="arrow">→</span> <span class="right">He always drinks coffee</span><br /><small>Kebiasaan pakai V1 (+s), bukan to be + V1.</small></li>
+              <li><span class="wrong">We are play football</span> <span class="arrow">→</span> <span class="right">We are playing football</span><br /><small>Setelah am/is/are, kata kerja harus + ing.</small></li>
+            </ul>
+          </section>
+
+          <!-- British notes -->
+          <section id="british" class="chapter">
+            <h2 class="chapter-title"><span class="chapter-emoji">🇬🇧</span> British English Notes</h2>
+            <p>Topik kali ini juga mengenalkan <em>adverbs of frequency</em> yang sering dipakai orang British dalam percakapan sehari-hari:</p>
+            <ul class="check-list">
+              <li><strong>I usually walk to school.</strong> — kebiasaan, pakai Present Simple.</li>
+              <li><strong>I'm currently revising for my exams.</strong> — sedang berlangsung, pakai Present Continuous.</li>
+            </ul>
+            <p>Perhatikan kata <strong>revision / revising</strong> (British) yang lebih umum dipakai dalam konteks belajar/ujian, dibandingkan <em>review</em> yang lebih sering dipakai dalam American English.</p>
+          </section>
+
+          <!-- Vocabulary -->
+          <section id="vocab" class="chapter">
+            <h2 class="chapter-title"><span class="chapter-emoji">💬</span> Vocabulary &amp; Pronunciation</h2>
+            <p>Tema kali ini <strong>Time Expressions</strong> — 20 kosakata penanda waktu yang membantu menentukan tense mana yang harus dipakai. IPA British (RP, non-rhotic). Ketuk tombol 🔊 untuk mendengar.</p>
+            <div class="vocab-grid">
+              <div class="vocab-card">
+                <div class="vocab-head"><span class="vocab-word">every day</span><button class="say-btn" data-text="every day" aria-label="Dengarkan pelafalan every day">🔊</button></div>
+                <span class="vocab-ipa">/ˈevri deɪ/</span><span class="vocab-read">Cara baca: evri dei</span><span class="vocab-mean">setiap hari</span>
+              </div>
+              <div class="vocab-card">
+                <div class="vocab-head"><span class="vocab-word">every week</span><button class="say-btn" data-text="every week" aria-label="Dengarkan pelafalan every week">🔊</button></div>
+                <span class="vocab-ipa">/ˈevri wiːk/</span><span class="vocab-read">Cara baca: evri wik</span><span class="vocab-mean">setiap minggu</span>
+              </div>
+              <div class="vocab-card">
+                <div class="vocab-head"><span class="vocab-word">always</span><button class="say-btn" data-text="always" aria-label="Dengarkan pelafalan always">🔊</button></div>
+                <span class="vocab-ipa">/ˈɔːlweɪz/</span><span class="vocab-read">Cara baca: olweiz</span><span class="vocab-mean">selalu</span>
+              </div>
+              <div class="vocab-card">
+                <div class="vocab-head"><span class="vocab-word">usually</span><button class="say-btn" data-text="usually" aria-label="Dengarkan pelafalan usually">🔊</button></div>
+                <span class="vocab-ipa">/ˈjuːʒuəli/</span><span class="vocab-read">Cara baca: yuzhueli</span><span class="vocab-mean">biasanya</span>
+              </div>
+              <div class="vocab-card">
+                <div class="vocab-head"><span class="vocab-word">often</span><button class="say-btn" data-text="often" aria-label="Dengarkan pelafalan often">🔊</button></div>
+                <span class="vocab-ipa">/ˈɒfən/</span><span class="vocab-read">Cara baca: ofen</span><span class="vocab-mean">sering</span>
+              </div>
+              <div class="vocab-card">
+                <div class="vocab-head"><span class="vocab-word">sometimes</span><button class="say-btn" data-text="sometimes" aria-label="Dengarkan pelafalan sometimes">🔊</button></div>
+                <span class="vocab-ipa">/ˈsʌmtaɪmz/</span><span class="vocab-read">Cara baca: samtaimz</span><span class="vocab-mean">kadang-kadang</span>
+              </div>
+              <div class="vocab-card">
+                <div class="vocab-head"><span class="vocab-word">never</span><button class="say-btn" data-text="never" aria-label="Dengarkan pelafalan never">🔊</button></div>
+                <span class="vocab-ipa">/ˈnevə/</span><span class="vocab-read">Cara baca: neve</span><span class="vocab-mean">tidak pernah</span>
+              </div>
+              <div class="vocab-card">
+                <div class="vocab-head"><span class="vocab-word">now</span><button class="say-btn" data-text="now" aria-label="Dengarkan pelafalan now">🔊</button></div>
+                <span class="vocab-ipa">/naʊ/</span><span class="vocab-read">Cara baca: nau</span><span class="vocab-mean">sekarang</span>
+              </div>
+              <div class="vocab-card">
+                <div class="vocab-head"><span class="vocab-word">right now</span><button class="say-btn" data-text="right now" aria-label="Dengarkan pelafalan right now">🔊</button></div>
+                <span class="vocab-ipa">/raɪt naʊ/</span><span class="vocab-read">Cara baca: rait nau</span><span class="vocab-mean">sekarang juga</span>
+              </div>
+              <div class="vocab-card">
+                <div class="vocab-head"><span class="vocab-word">today</span><button class="say-btn" data-text="today" aria-label="Dengarkan pelafalan today">🔊</button></div>
+                <span class="vocab-ipa">/təˈdeɪ/</span><span class="vocab-read">Cara baca: tudei</span><span class="vocab-mean">hari ini</span>
+              </div>
+              <div class="vocab-card">
+                <div class="vocab-head"><span class="vocab-word">tonight</span><button class="say-btn" data-text="tonight" aria-label="Dengarkan pelafalan tonight">🔊</button></div>
+                <span class="vocab-ipa">/təˈnaɪt/</span><span class="vocab-read">Cara baca: tunait</span><span class="vocab-mean">malam ini</span>
+              </div>
+              <div class="vocab-card">
+                <div class="vocab-head"><span class="vocab-word">this week</span><button class="say-btn" data-text="this week" aria-label="Dengarkan pelafalan this week">🔊</button></div>
+                <span class="vocab-ipa">/ðɪs wiːk/</span><span class="vocab-read">Cara baca: dis wik</span><span class="vocab-mean">minggu ini</span>
+              </div>
+              <div class="vocab-card">
+                <div class="vocab-head"><span class="vocab-word">currently</span><button class="say-btn" data-text="currently" aria-label="Dengarkan pelafalan currently">🔊</button></div>
+                <span class="vocab-ipa">/ˈkʌrəntli/</span><span class="vocab-read">Cara baca: karentli</span><span class="vocab-mean">saat ini</span>
+              </div>
+              <div class="vocab-card">
+                <div class="vocab-head"><span class="vocab-word">at present</span><button class="say-btn" data-text="at present" aria-label="Dengarkan pelafalan at present">🔊</button></div>
+                <span class="vocab-ipa">/ət ˈprezənt/</span><span class="vocab-read">Cara baca: et prezent</span><span class="vocab-mean">saat ini</span>
+              </div>
+              <div class="vocab-card">
+                <div class="vocab-head"><span class="vocab-word">nowadays</span><button class="say-btn" data-text="nowadays" aria-label="Dengarkan pelafalan nowadays">🔊</button></div>
+                <span class="vocab-ipa">/ˈnaʊədeɪz/</span><span class="vocab-read">Cara baca: nauedeiz</span><span class="vocab-mean">akhir-akhir ini</span>
+              </div>
+              <div class="vocab-card">
+                <div class="vocab-head"><span class="vocab-word">these days</span><button class="say-btn" data-text="these days" aria-label="Dengarkan pelafalan these days">🔊</button></div>
+                <span class="vocab-ipa">/ðiːz deɪz/</span><span class="vocab-read">Cara baca: diz deiz</span><span class="vocab-mean">akhir-akhir ini</span>
+              </div>
+              <div class="vocab-card">
+                <div class="vocab-head"><span class="vocab-word">at the moment</span><button class="say-btn" data-text="at the moment" aria-label="Dengarkan pelafalan at the moment">🔊</button></div>
+                <span class="vocab-ipa">/ət ðə ˈməʊmənt/</span><span class="vocab-read">Cara baca: et de moument</span><span class="vocab-mean">pada saat ini</span>
+              </div>
+              <div class="vocab-card">
+                <div class="vocab-head"><span class="vocab-word">once a week</span><button class="say-btn" data-text="once a week" aria-label="Dengarkan pelafalan once a week">🔊</button></div>
+                <span class="vocab-ipa">/wʌns ə wiːk/</span><span class="vocab-read">Cara baca: wans e wik</span><span class="vocab-mean">sekali seminggu</span>
+              </div>
+              <div class="vocab-card">
+                <div class="vocab-head"><span class="vocab-word">twice a month</span><button class="say-btn" data-text="twice a month" aria-label="Dengarkan pelafalan twice a month">🔊</button></div>
+                <span class="vocab-ipa">/twaɪs ə mʌnθ/</span><span class="vocab-read">Cara baca: twais e manth</span><span class="vocab-mean">dua kali sebulan</span>
+              </div>
+              <div class="vocab-card">
+                <div class="vocab-head"><span class="vocab-word">every morning</span><button class="say-btn" data-text="every morning" aria-label="Dengarkan pelafalan every morning">🔊</button></div>
+                <span class="vocab-ipa">/ˈevri ˈmɔːnɪŋ/</span><span class="vocab-read">Cara baca: evri moning</span><span class="vocab-mean">setiap pagi</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Exercises -->
+          <section id="exercises" class="chapter">
+            <h2 class="chapter-title"><span class="chapter-emoji">✍️</span> Exercises</h2>
+            <p class="muted">Kerjakan dulu tanpa melihat Answer Key. Klik "Periksa jawaban" untuk cek isian singkat.</p>
+
+            <h3 class="sub-title">Easy <span class="level-badge easy">Easy</span></h3>
+            <p>Pilih tense yang benar, lalu tulis bentuk yang tepat.</p>
+            <ol class="ex-list">
+              <li>She <input class="ex-input" data-answer="watches" size="12" aria-label="jawaban easy 1" /> TV every night. <small class="muted">(watches / is watching)</small></li>
+              <li>Look! The dog <input class="ex-input" data-answer="is barking" size="12" aria-label="jawaban easy 2" /> at the mailman. <small class="muted">(barks / is barking)</small></li>
+              <li>My father <input class="ex-input" data-answer="works" size="12" aria-label="jawaban easy 3" /> at the bank. <small class="muted">(works / is working)</small></li>
+              <li>Right now, they <input class="ex-input" data-answer="are playing" size="12" aria-label="jawaban easy 4" /> football in the park. <small class="muted">(play / are playing)</small></li>
+              <li>I usually <input class="ex-input" data-answer="drink" size="12" aria-label="jawaban easy 5" /> tea in the morning. <small class="muted">(drink / am drinking)</small></li>
+            </ol>
+
+            <h3 class="sub-title">Medium <span class="level-badge medium">Medium</span></h3>
+            <p>Lengkapi dengan Present Simple atau Present Continuous.</p>
+            <ol class="ex-list">
+              <li>Look! The baby <input class="ex-input" data-answer="is crying" size="12" aria-label="jawaban medium 1" /> (cry).</li>
+              <li>My sister <input class="ex-input" data-answer="doesn't like|does not like|doesnt like" size="14" aria-label="jawaban medium 2" /> (not / like) spicy food.</li>
+              <li>We <input class="ex-input" data-answer="are studying" size="14" aria-label="jawaban medium 3" /> (study) for the test right now.</li>
+              <li>He <input class="ex-input" data-answer="goes" size="10" aria-label="jawaban medium 4" /> (go) to the gym every Monday.</li>
+              <li><input class="ex-input" data-answer="are" size="6" aria-label="jawaban medium 5a" /> you <input class="ex-input" data-answer="doing" size="10" aria-label="jawaban medium 5b" /> (do) anything at the moment?</li>
+            </ol>
+
+            <h3 class="sub-title">Hard <span class="level-badge hard">Hard</span></h3>
+            <p>Bacaan pendek — pilih tense yang benar berdasarkan konteks.</p>
+            <p class="lead">
+              Sarah usually gets up at 6 a.m. She goes to university every weekday. Today is different. She
+              <input class="ex-input" data-answer="is staying" size="12" aria-label="jawaban hard 1" /> (1. stay) at home because she <input class="ex-input" data-answer="is revising" size="12" aria-label="jawaban hard 2" /> (2. revise) for
+              her final exam. She normally <input class="ex-input" data-answer="has" size="8" aria-label="jawaban hard 3" /> (3. have) breakfast at 7, but this morning she
+              <input class="ex-input" data-answer="is skipping" size="12" aria-label="jawaban hard 4" /> (4. skip) breakfast because she <input class="ex-input" data-answer="wants" size="8" aria-label="jawaban hard 5" /> (5. want) to start
+              studying early.
+            </p>
+
+            <div class="ex-actions">
+              <button class="btn" id="checkBtn">Periksa jawaban</button>
+              <button class="btn btn-ghost" id="resetBtn">Reset</button>
+              <span class="score" id="score" hidden></span>
+            </div>
+          </section>
+
+          <!-- Homework -->
+          <section id="homework" class="chapter">
+            <h2 class="chapter-title"><span class="chapter-emoji">🏠</span> Homework</h2>
+            <p class="lead"><strong>✨ My Normal Day vs Today</strong></p>
+            <ul class="check-list">
+              <li><strong>Paragraph 1 — "My Normal Day"</strong> (8–10 kalimat) → semua memakai Present Simple.</li>
+              <li><strong>Paragraph 2 — "What I'm Doing Today"</strong> (8–10 kalimat) → semua memakai Present Continuous.</li>
+            </ul>
+            <textarea
+              class="homework"
+              id="homework"
+              rows="12"
+              placeholder="My Normal Day&#10;1. I usually wake up at 6 a.m.&#10;...&#10;&#10;What I'm Doing Today&#10;1. Today I am staying at home.&#10;..."
+              aria-label="Jawaban homework"
+            ></textarea>
+            <p class="muted" id="hwStatus">Tersimpan otomatis di perangkatmu.</p>
+
+            <div class="callout callout-accent">
+              <p class="lead"><strong>🌟 Real-Life Challenge</strong></p>
+              <p>Selama 10 menit, lihat sekelilingmu — di rumah, kamar, atau tempat kamu berada sekarang. Lalu tulis:</p>
+              <ul class="check-list">
+                <li>5 kalimat tentang apa yang <strong>BIASANYA</strong> terjadi di tempat itu (Present Simple).</li>
+                <li>5 kalimat tentang apa yang <strong>SEDANG</strong> terjadi di tempat itu SAAT INI (Present Continuous).</li>
+              </ul>
+              <p class="example" data-say="My family usually has dinner together at seven p m">My family usually has dinner together at 7 p.m.<button class="say-btn" aria-label="Dengarkan pelafalan">🔊</button></p>
+              <p class="translate">kebiasaan</p>
+              <p class="example" data-say="Right now, my sister is watching TV while I am writing this">Right now, my sister is watching TV while I'm writing this.<button class="say-btn" aria-label="Dengarkan pelafalan">🔊</button></p>
+              <p class="translate">sedang terjadi</p>
+              <p class="muted">Tujuannya: grammar langsung dipakai di kehidupan nyata, bukan cuma berhenti di soal pilihan ganda.</p>
+            </div>
+          </section>
+
+          <!-- Answer key -->
+          <section id="answers" class="chapter">
+            <h2 class="chapter-title"><span class="chapter-emoji">⭐</span> Answer Key</h2>
+            <p class="muted"><em>Jangan intip sebelum selesai mengerjakan semua exercises di atas!</em></p>
+            <button class="btn btn-outline" id="answerToggle" aria-expanded="false">Tampilkan kunci jawaban</button>
+            <div class="answer-body" id="answerBody" hidden>
+              <h3 class="sub-title">Easy</h3>
+              <ol class="ex-list">
+                <li>watches</li>
+                <li>is barking</li>
+                <li>works</li>
+                <li>are playing</li>
+                <li>drink</li>
+              </ol>
+              <h3 class="sub-title">Medium</h3>
+              <ol class="ex-list">
+                <li>is crying</li>
+                <li>doesn't like</li>
+                <li>are studying</li>
+                <li>goes</li>
+                <li>Are … doing</li>
+              </ol>
+              <h3 class="sub-title">Hard</h3>
+              <ol class="ex-list">
+                <li>is staying</li>
+                <li>is revising</li>
+                <li>has</li>
+                <li>is skipping</li>
+                <li>wants <small>(stative verb — tetap V1 walau konteksnya sekarang)</small></li>
+              </ol>
+            </div>
+          </section>
+
+          <!-- Lesson checklist -->
+          <section id="checklist" class="chapter">
+            <h2 class="chapter-title"><span class="chapter-emoji">✅</span> Lesson Checklist</h2>
+            <p>Centang setelah kamu menyelesaikan tiap bagian. Kalau semuanya sudah tercentang, kamu siap lanjut ke Lesson 04.</p>
+            <ul class="task-list">
+              <li>
+                <label><input type="checkbox" data-check="ch-theory" /> Aku sudah memahami perbedaan kedua tense.</label>
+              </li>
+              <li>
+                <label><input type="checkbox" data-check="ch-notes" /> Aku sudah menyelesaikan catatanku.</label>
+              </li>
+              <li>
+                <label><input type="checkbox" data-check="ch-ex" /> Aku sudah mengerjakan semua exercises.</label>
+              </li>
+              <li>
+                <label><input type="checkbox" data-check="ch-hw" /> Aku sudah mengerjakan homework.</label>
+              </li>
+              <li>
+                <label><input type="checkbox" data-check="ch-review" /> Aku sudah mengoreksi kesalahanku.</label>
+              </li>
+              <li>
+                <label><input type="checkbox" data-check="ch-ready" /> Aku siap untuk Lesson 04.</label>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Lesson navigation -->
+          <nav class="lesson-nav" aria-label="Navigasi lesson">
+            <button class="nav-card lesson-nav-home" type="button" data-reopen>
+              <span class="nav-dir">Pembuka</span>
+              <span class="nav-name">Lihat halaman pembuka lagi</span>
+            </button>
+            <a class="nav-card nav-prev" href="lesson-02.html">
+              <span class="nav-dir">← Lesson sebelumnya</span>
+              <span class="nav-name">Present Continuous</span>
+            </a>
+            <a class="nav-card nav-next is-locked" href="lesson-04.html" aria-disabled="true" tabindex="-1">
+              <span class="nav-dir">Lesson berikutnya →</span>
+              <span class="nav-name">Simple Past · segera hadir</span>
+            </a>
+          </nav>
+
+          <footer class="book-footer">
+            <p class="ornament">✧ ■ ✧</p>
+            <p><em>Lesson 03 · Present Simple vs Present Continuous · English Masterbook · Volume 1</em></p>
+            <p class="muted">by Gaida Tsabita Ahmad</p>
+          </footer>
+        </article>
+      </main>
+    </div>
+
+    <button class="to-top" id="toTop" aria-label="Kembali ke atas" hidden>↑</button>
 
     <script src="script.js"></script>
   </body>

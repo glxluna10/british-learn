@@ -1319,6 +1319,50 @@ body.opening-active {
   gap: 10px;
 }
 
+/* ---------- Cover meta (difficulty / time) ---------- */
+.cover-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.cover-meta-item {
+  font-size: 13px;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  padding: 6px 14px;
+}
+
+/* ---------- Lesson checklist ---------- */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+}
+.task-list li {
+  margin-bottom: 10px;
+}
+.task-list label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.95em;
+}
+.task-list input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+.task-list label:has(input:checked) {
+  color: var(--ink-soft);
+  text-decoration: line-through;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .layout {

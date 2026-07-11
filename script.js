@@ -311,6 +311,16 @@
   // "Lihat pembuka lagi" buttons anywhere on the page
   $$('[data-reopen]').forEach((b) => b.addEventListener('click', openOpening));
 
+  /* ---------- Lesson checklist (per-lesson persistence) ---------- */
+  const checkboxes = $$('input[type="checkbox"][data-check]');
+  checkboxes.forEach((box) => {
+    const key = 'em-check-' + lessonKey + '-' + box.dataset.check;
+    box.checked = store.get(key, '') === '1';
+    box.addEventListener('change', () => {
+      store.set(key, box.checked ? '1' : '0');
+    });
+  });
+
   /* ---------- Init ---------- */
   buildVocab();
   onScroll();
