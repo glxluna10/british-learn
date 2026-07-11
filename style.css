@@ -565,7 +565,7 @@ code {
   inset: 0;
   width: var(--p);
   background: var(--primary-soft);
-  z-index: 0;
+  z-index: -1;
 }
 .sig b,
 .sig {
