@@ -24,6 +24,42 @@
     },
   };
 
+  /* ---------- In-app browser warning banner ---------- */
+  function detectInAppBrowser() {
+    const ua = navigator.userAgent || '';
+    // Common in-app WebView signatures (Instagram, Facebook, WhatsApp, TikTok, Line).
+    const knownInApp = /Instagram|FBAN|FBAV|FB_IAB|WhatsApp|Line\/|TikTok|MicroMessenger/i.test(ua);
+    const noSpeech = !('speechSynthesis' in window);
+    return { knownInApp, noSpeech, flagged: knownInApp || noSpeech };
+  }
+
+  function buildInAppBanner() {
+    const status = detectInAppBrowser();
+    if (!status.flagged) return;
+    if (store.get('em-banner-dismissed', '') === '1') return;
+
+    const header = $('.topbar');
+    if (!header) return;
+
+    const banner = document.createElement('div');
+    banner.className = 'inapp-banner';
+    banner.setAttribute('role', 'note');
+    banner.innerHTML = `
+      <span class="inapp-banner-icon" aria-hidden="true">🔊</span>
+      <p class="inapp-banner-text">
+        Fitur <strong>pelafalan suara</strong> tidak berjalan di browser aplikasi (mis. Instagram/WhatsApp).
+        Ketuk titik tiga (⋮) di kanan atas, lalu pilih <strong>&ldquo;Buka di Chrome&rdquo;</strong> untuk pengalaman terbaik.
+      </p>
+      <button class="inapp-banner-close" aria-label="Tutup peringatan">✕</button>`;
+    header.insertAdjacentElement('afterend', banner);
+
+    const closeBtn = banner.querySelector('.inapp-banner-close');
+    closeBtn.addEventListener('click', () => {
+      banner.remove();
+      store.set('em-banner-dismissed', '1');
+    });
+  }
+
   /* ---------- Vocabulary data (Lesson 01) ---------- */
   const VOCAB = [
     ['wake up', '/weɪk ʌp/', 'weik ap', 'bangun tidur'],
@@ -322,6 +358,7 @@
   });
 
   /* ---------- Init ---------- */
+  buildInAppBanner();
   buildVocab();
   onScroll();
 })();

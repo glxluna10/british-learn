@@ -188,6 +188,49 @@ html[data-theme='dark'] .theme-btn .ico-moon {
   display: block;
 }
 
+/* ---------- In-app browser warning banner ---------- */
+.inapp-banner {
+  position: sticky;
+  top: 59px;
+  z-index: 49;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 16px;
+  background: var(--accent-soft);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line));
+}
+.inapp-banner-icon {
+  flex: none;
+  font-size: 18px;
+  line-height: 1.4;
+}
+.inapp-banner-text {
+  flex: 1;
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.inapp-banner-text strong {
+  color: var(--accent);
+}
+.inapp-banner-close {
+  flex: none;
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+.inapp-banner-close:hover {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+}
+
 /* ---------- Layout ---------- */
 .layout {
   display: grid;
